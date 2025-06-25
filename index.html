@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pandu Adi Winata - Photographer Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #4b5563; /* Darker color for scrollbar */
+      border-radius: 10px;
+    }
+
+    /* For Filtering active underline */
+    .active-underline {
+      border-bottom-width: 3px;
+      border-color: #f87171;
+      font-weight: 700;
+      color: #ef4444;
+    }
+
+    /* Portfolio masonry style */
+    .masonry {
+      column-count: 4;
+      column-gap: 1rem;
+    }
+
+    @media (max-width: 1280px) {
+      .masonry {
+        column-count: 3;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .masonry {
+        column-count: 2;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .masonry {
+        column-count: 1;
+      }
+    }
+
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .masonry-item:hover {
+      transform: scale(1.03);
+      z-index: 10;
+      box-shadow: 0 10px 20px rgba(248, 113, 113, 0.3);
+    }
+
+    /* Floating action button */
+    .fab {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 3.5rem;
+      height: 3.5rem;
+      background-color: #ef4444;
+      color: white;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(239, 68, 68, 0.6);
+      cursor: pointer;
+      transition: background-color 0.2s;
+      z-index: 50;
+    }
+
+    .fab:hover {
+      background-color: #dc2626;
+    }
+
+    /* Dark theme styles */
+    body {
+      background-color: #1f2937; /* Dark background */
+      color: #e5e7eb; /* Light text color */
+    }
+
+    nav {
+      background-color: #111827; /* Darker navbar */
+    }
+
+    a {
+      color: #e5e7eb; /* Light link color */
+    }
+
+    a:hover {
+      color: #f87171; /* Hover color for links */
+    }
+
+    .bg-gray-50 {
+      background-color: #374151; /* Darker background for sections */
+    }
+
+    .text-gray-600 {
+      color: #d1d5db; /* Lighter gray for text */
+    }
+
+    .text-gray-700 {
+      color: #e5e7eb; /* Light gray for text */
+    }
+
+    .text-gray-900 {
+      color: #f9fafb; /* Very light gray for headings */
+    }
+  </style>
+</head>
+
+<body class="antialiased">
+  <!-- Navbar -->
+  <nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto border-b border-gray-600 sticky top-0 z-40">
+    <div class="font-bold text-2xl text-red-500 select-none">Pandu Adi Winata</div>
+    <ul class="flex space-x-8 font-semibold text-lg">
+      <li>
+        <a href="#home" class="text-red-500 border-b-2 border-red-500 pb-1">Home</a>
+      </li>
+      <li><a href="#services" class="hover:text-red-500 transition">Services</a></li>
+      <li><a href="#skills" class="hover:text-red-500 transition">Skills</a></li>
+      <li><a href="#education" class="hover:text-red-500 transition">Education</a></li>
+      <li><a href="#experience" class="hover:text-red-500 transition">Experience</a></li>
+      <li><a href="#contact" class="hover:text-red-500 transition">Contact</a></li>
+    </ul>
+  </nav>
+
+ <section id="home" class="flex flex-col xl:flex-row items-center max-w-7xl mx-auto px-6 py-24 gap-16 min-h-[90vh]">
+  <!-- Left: portrait -->
+  <div class="w-72 h-45 rounded-full overflow-hidden shadow-lg relative">
+    <img
+      src="pict/COVER/Gambar WhatsApp 2025-06-25 pukul 15.40.29_e15761c2.jpg"
+      alt="Portrait of Pandu"
+      class="object-cover w-full h-full object-top"
+    />
+  </div>
+
+  <!-- Right: intro and socials -->
+  <div>
+    <h1 class="text-5xl sm:text-6xl font-bold mb-4">
+      Hi, it's <span class="text-red-500">Pandu Adi Winata</span>
+    </h1>
+    <p class="text-2xl sm:text-3xl font-semibold mb-4">
+      I'm a <span class="text-red-500">Professional Photographer / Graphic Designer</span>
+    </p>
+    <p class="max-w-xl text-lg leading-relaxed mb-6 text-gray-300">
+      Passionate about capturing the moments that tell stories, and turning fleeting instants into timeless works of art. I specialize in portrait, nature, and country photography with a keen eye for lighting and composition.
+    </p>
+    
+    <!-- Social icons -->
+    <div class="flex gap-4 mb-6">
+      <a href="#" class="border border-red-500 p-3 rounded-full text-red-500 hover:bg-red-500 hover:text-white transition">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="#" class="border border-red-500 p-3 rounded-full text-red-500 hover:bg-red-500 hover:text-white transition">
+        <i class="fab fa-500px"></i>
+      </a>
+      <a href="#" class="border border-red-500 p-3 rounded-full text-red-500 hover:bg-red-500 hover:text-white transition">
+        <i class="fab fa-dribbble"></i>
+      </a>
+      <a href="https://instagram.com/pnduadwnata" target="_blank" class="border border-red-500 p-3 rounded-full text-red-500 hover:bg-red-500 hover:text-white transition">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+
+    <a
+      href="#contact"
+      class="inline-block rounded-full border border-red-500 px-8 py-3 font-semibold tracking-wider text-red-500 transition hover:bg-red-500 hover:text-white"
+    >
+      Hire me
+    </a>
+  </div>
+</section>
+
+
+  <!-- Services Section -->
+<section
+  id="services"
+  class="max-w-7xl mx-auto px-6 py-16 border-t border-gray-600"
+>
+  <h2 class="text-3xl font-extrabold text-center mb-12">
+    Services
+  </h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="bg-[#2f1c1c] p-6 rounded-lg shadow hover:shadow-lg transition">
+      <i class="fas fa-camera-retro fa-3x text-red-400 mb-4"></i>
+      <h3 class="text-xl font-semibold mb-2 text-white">Portrait Photography</h3>
+      <p class="text-gray-300">
+        Capturing authentic and expressive portraits that reveal your true self.
+      </p>
+    </div>
+    <div class="bg-[#2f1c1c] p-6 rounded-lg shadow hover:shadow-lg transition">
+      <i class="fas fa-palette fa-3x text-red-400 mb-4"></i>
+      <h3 class="text-xl font-semibold mb-2 text-white">Brand & Visual Design</h3>
+      <p class="text-gray-300">
+        Creating strong visual identities and brand designs with elegance and precision.
+      </p>
+    </div>
+    <div class="bg-[#2f1c1c] p-6 rounded-lg shadow hover:shadow-lg transition">
+      <i class="fas fa-globe-americas fa-3x text-red-400 mb-4"></i>
+      <h3 class="text-xl font-semibold mb-2 text-white">Travel Photography</h3>
+      <p class="text-gray-300">
+        Visual storytelling through photos highlighting culture and landscapes.
+      </p>
+    </div>
+    <div class="bg-[#2f1c1c] p-6 rounded-lg shadow hover:shadow-lg transition">
+      <i class="fas fa-pen-nib fa-3x text-red-400 mb-4"></i>
+      <h3 class="text-xl font-semibold mb-2 text-white">Poster & Digital Content</h3>
+      <p class="text-gray-300">
+        Designing impactful posters, social media content, and graphic visuals.
+      </p>
+    </div>
+  </div>
+</section>
+
+  <!-- Skills Section -->
+  <section
+    id="skills"
+    class="max-w-7xl mx-auto px-6 py-16 border-t border-gray-600"
+  >
+    <h2 class="text-3xl font-extrabold text-center mb-12">
+      Skills
+    </h2>
+    <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-12">
+  <div>
+    <h3 class="text-xl font-semibold mb-4">Photography & Technical</h3>
+    <ul class="list-disc list-inside space-y-2">
+      <li>DSLR & Mirrorless Camera Mastery</li>
+      <li>Manual Exposure & Light Control</li>
+      <li>Creative Composition & Framing</li>
+      <li>Studio & Natural Lighting Setup</li>
+      <li>HDR & Long-Exposure Techniques</li>
+    </ul>
+  </div>
+  <div>
+    <h3 class="text-xl font-semibold mb-4">Graphic Design & Software</h3>
+    <ul class="list-disc list-inside space-y-2">
+      <li>Adobe Photoshop, Illustrator & Lightroom</li>
+      <li>Brand Identity & Visual Consistency</li>
+      <li>Poster, Banner & Social Media Design</li>
+      <li>Typography & Layout Composition</li>
+      <li>Color Theory & Visual Hierarchy</li>
+    </ul>
+  </div>
+</div>
+  </section>
+
+  <!-- Education Section -->
+<section
+  id="education"
+  class="max-w-7xl mx-auto px-6 py-16 border-t border-gray-600"
+>
+  <h2 class="text-3xl font-extrabold text-center mb-12">
+    Education
+  </h2>
+  <div class="max-w-3xl mx-auto space-y-8">
+    <div>
+      <h3 class="text-xl font-semibold">Vocational High School — Visual Communication Design</h3>
+      <span>2022 – 2025</span>
+      <p class="mt-2 text-gray-300">
+        Pursuing a vocational education focused on graphic design, visual media, and photography. Developed core design principles, creative thinking, and technical software skills.
+      </p>
+    </div>
+    <div>
+      <h3 class="text-xl font-semibold">Independent Study and Practice</h3>
+      <span>2020 – Present</span>
+      <p class="mt-2 text-gray-300">
+        Gained extensive practical knowledge through self-directed learning, industry resources, and hands-on experience in photography, editing, and design.
+      </p>
+    </div>
+    <div>
+      <h3 class="text-xl font-semibold">Raintrace Picture (Crew & Photographer)</h3>
+      <span>2022 – Present</span>
+      <p class="mt-2 text-gray-300">
+        Built and managed a creative studio providing professional photography and design services. Collaborated with clients, led projects, and continuously refined visual storytelling skills through real-world execution.
+      </p>
+    </div>
+  </div>
+</section>
+
+  <!-- Experience Section -->
+<section
+  id="experience"
+  class="max-w-7xl mx-auto px-6 py-16 border-t border-gray-600"
+>
+  <h2 class="text-3xl font-extrabold text-center mb-12">
+    Experience
+  </h2>
+  <div class="max-w-4xl mx-auto space-y-8">
+    <div>
+      <h3 class="text-xl font-semibold">
+        Raintrace Pi – Creative Crew
+        <span class="text-red-500 font-semibold"> (2024 – Present)</span>
+      </h3>
+      <ul class="list-disc list-inside mt-2 space-y-1 text-gray-300">
+        <li>Contributed to photography and design projects including portraits, pre-wedding, graduation, and nature-based shoots.</li>
+        <li>Involved in creative direction, photo editing, and project execution as part of a small professional team.</li>
+        <li>Collaborated closely with other members to ensure consistent quality and client satisfaction.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-semibold">
+        Design Intern – PT Zealin Cosmetics Perfumery
+        <span class="text-red-500 font-semibold"> (2024)</span>
+      </h3>
+      <ul class="list-disc list-inside mt-2 space-y-1 text-gray-300">
+        <li>Created visual assets including product labels, social media posts, and packaging designs for a local cosmetics brand.</li>
+        <li>Worked directly with the marketing and product development team to align design output with brand identity.</li>
+        <li>Gained experience handling real-world creative briefs and tight production schedules.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-semibold">
+        Nesker TV Official – Production Crew
+        <span class="text-red-500 font-semibold"> (2022 – 2025)</span>
+      </h3>
+      <ul class="list-disc list-inside mt-2 space-y-1 text-gray-300">
+        <li>Assisted in content creation, filming, and editing for video and multimedia productions.</li>
+        <li>Operated cameras, managed on-set logistics, and participated in post-production processes.</li>
+        <li>Ensured technical quality and contributed to creative brainstorming sessions for new media content.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-semibold">
+        Freelance Photographer
+        <span class="text-red-500 font-semibold"> (2023 – Present)</span>
+      </h3>
+      <ul class="list-disc list-inside mt-2 space-y-1 text-gray-300">
+        <li>Handled various photography projects with a focus on storytelling, composition, and lighting.</li>
+        <li>Delivered high-quality content for personal clients, events, and creative collaborations.</li>
+        <li>Managed the full workflow including client briefings, shooting, editing, and delivery.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Section -->
+<section id="portfolio" class="max-w-7xl mx-auto px-6 py-16 border-t border-gray-600">
+  <h2 class="text-3xl font-extrabold text-center mb-12">Portfolio</h2>
+
+  <!-- Filter Buttons -->
+  <div class="flex justify-center gap-8 mb-12 flex-wrap font-semibold text-lg cursor-pointer select-none">
+    <div class="filter-btn active-underline" data-filter="all">All</div>
+    <div class="filter-btn" data-filter="human">Human</div>
+    <div class="filter-btn" data-filter="nature">Nature</div>
+    <div class="filter-btn" data-filter="country">Country</div>
+    <div class="filter-btn" data-filter="video">Video</div>
+    <div class="filter-btn" data-filter="design">Design</div>
+  </div>
+
+  <!-- Portfolio Items -->
+  <div class="masonry max-w-7xl mx-auto" id="portfolio-items">
+    <div class="masonry-item" data-category="human">
+      <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=90" alt="Human 1" />
+    </div>
+    <div class="masonry-item" data-category="nature">
+      <img src="https://images.unsplash.com/photo-1468071174046-657d9d351a40?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=90" alt="Nature 1" />
+    </div>
+    <div class="masonry-item" data-category="human">
+      <img src="https://images.unsplash.com/photo-1533616688415-cfa6e3a8baa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=90" alt="Human 2" />
+    </div>
+    <div class="masonry-item" data-category="country">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=90" alt="Country 1" />
+    </div>
+    <div class="masonry-item" data-category="human">
+      <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=90" alt="Human 3" />
+    </div>
+    <div class="masonry-item" data-category="nature">
+      <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=90" alt="Nature 2" />
+    </div>
+    <div class="masonry-item" data-category="country">
+      <img src="https://images.unsplash.com/photo-1514516873161-0877938d6c25?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=90" alt="Country 2" />
+    </div>
+    <div class="masonry-item" data-category="video">
+  <video controls class="w-full rounded-lg">
+    <source src="pict/Video/Video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+    <div class="masonry-item" data-category="design">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=90" alt="Design 1 - Poster" />
+    </div>
+    <div class="masonry-item" data-category="design">
+      <img src="https://images.unsplash.com/photo-1508923567004-3a6b8004f3d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=90" alt="Design 2 - Branding" />
+    </div>
+    <div class="masonry-item" data-category="design">
+      <img src="https://images.unsplash.com/photo-1602524207090-dcd662f47d6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=90" alt="Design 3 - Social Media Post" />
+    </div>
+  </div>
+</section>
+
+<!-- Filtering Script -->
+<script>
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const portfolioItems = document.querySelectorAll('.masonry-item');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const category = button.dataset.filter;
+
+      // Ganti underline
+      filterButtons.forEach(btn => btn.classList.remove('active-underline'));
+      button.classList.add('active-underline');
+
+      // Show/hide portfolio items
+      portfolioItems.forEach(item => {
+        const itemCategory = item.dataset.category;
+        if (category === 'all' || itemCategory === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+
+ <!-- Contact + Instagram Section -->
+<section id="contact" class="bg-gray-800 text-gray-100 py-16 border-t border-gray-600">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl font-extrabold text-center mb-6">Get in Touch</h2>
+    <p class="mb-10 max-w-2xl mx-auto text-lg text-center text-gray-300">
+      Feel free to reach out for collaborations, commissions, or just to say hello.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-12">
+      <!-- Contact Info -->
+      <div class="space-y-6 text-base">
+        <div class="flex items-center gap-4">
+          <i class="fas fa-envelope text-red-500 w-6"></i>
+          <span class="break-all">miftamahesa56@gmail.com</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <i class="fas fa-phone text-red-500 w-6"></i>
+          <span>+62 831-2184-9912</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <i class="fas fa-location-dot text-red-500 w-6"></i>
+          <span>Brebes, Central Java, Indonesia</span>
+        </div>
+        <div class="pt-4">
+          <a
+            href="https://wa.me/6283121849912"
+            target="_blank"
+            class="inline-block border border-red-500 px-8 py-3 rounded-full font-semibold text-red-500 hover:bg-red-500 hover:text-white transition"
+          >
+            Chat via WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Instagram Feed -->
+      <div class="text-center">
+        <h3 class="text-2xl font-extrabold mb-2 text-white">Follow Instagram</h3>
+        <p class="mb-6">
+          <a href="https://instagram.com/pnduadwnata" target="_blank" class="text-red-500 hover:underline">@pnduadwnata</a>
+        </p>
+        <div class="flex overflow-x-auto gap-4 justify-center px-2">
+          <img src="pict/Instagram Feed/1.png" alt="Insta 1" class="min-w-[200px] rounded-lg" />
+          <img src="pict/Instagram Feed/2.png" alt="Insta 2" class="min-w-[200px] rounded-lg" />
+          <img src="pict/Instagram Feed/3.png" alt="Insta 3" class="min-w-[200px] rounded-lg" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
